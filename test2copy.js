@@ -7,7 +7,7 @@ app.use(cors())
 var bodyParser = require('body-parser');
 const ObjectId = require('mongodb').ObjectId;
 const {MongoClient}=require('mongodb');
-const uri = "mongodb+srv://ravinandan:Xx8C3AOm5dRvAtZq@cluster0.klfhs2c.mongodb.net/test";
+const uri = process.env.uri;
 const client = new MongoClient(uri);
 const collection = client.db("data-manage").collection("Users");
   // perform actions on the collection object
