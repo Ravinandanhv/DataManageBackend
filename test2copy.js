@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 const ObjectId = require('mongodb').ObjectId;
 const {MongoClient}=require('mongodb');
 const uri = process.env.uri;
-const client = new MongoClient(uri);
+const client = new MongoClient(uri,{ useUnifiedTopology: true}, { useNewUrlParser: true }, { connectTimeoutMS: 30000 }, { keepAlive: 1});
 const collection = client.db("data-manage").collection("Users");
   // perform actions on the collection object
 var users =[];
